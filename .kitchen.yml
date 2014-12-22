@@ -1,0 +1,51 @@
+---
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-trusty
+    driver:
+      name: openstack
+      openstack_username: admin
+      openstack_api_key: mypass
+      openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
+      require_chef_omnibus: 'true'
+      flavor_ref: 2
+      image_ref: ubuntu-trusty
+
+  - name: ubuntu-precise
+    driver:
+      name: openstack
+      openstack_username: admin
+      openstack_api_key: mypass
+      openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
+      require_chef_omnibus: 'true'
+      flavor_ref: 2
+      image_ref: ubuntu-precise
+
+  - name: centos-65
+    driver:
+      name: openstack
+      openstack_username: admin
+      openstack_api_key: mypass
+      openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
+      require_chef_omnibus: 'true'
+      flavor_ref: 1
+      image_ref: centos-65
+
+  - name: centos-7
+    driver:
+      name: openstack
+      openstack_username: admin
+      openstack_api_key: mypass
+      openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
+      require_chef_omnibus: 'true'
+      flavor_ref: 1
+      image_ref: centos-7
+
+
+suites:
+  - name: default
+    run_list:
+      - recipe[kitchen-openstack-testing::default]
+    attributes:
