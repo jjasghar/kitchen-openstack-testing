@@ -30,7 +30,7 @@ platforms:
       openstack_api_key: mypass
       openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
       require_chef_omnibus: 'true'
-      flavor_ref: 1
+      flavor_ref: 2
       image_ref: centos-65
 
   - name: centos-7
@@ -40,7 +40,7 @@ platforms:
       openstack_api_key: mypass
       openstack_auth_url: http://0.0.0.0:5000/v2.0/tokens
       require_chef_omnibus: 'true'
-      flavor_ref: 1
+      flavor_ref: 2
       image_ref: centos-7
 
 
